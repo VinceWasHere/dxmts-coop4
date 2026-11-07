@@ -11,7 +11,7 @@ Análisis en VirusTotal de la versión v3 (2026-11-07):
 
 | Zip | Resultado | SHA-256 |
 |---|---|---|
-| Windows | [0 de 66 antivirus lo marcan](https://www.virustotal.com/gui/file/3386873c4a76fa366bbbc0f6c2e5a474f6ce305c7aa1d66c1ee892574ce27c74) | `3386873c4a76fa366bbbc0f6c2e5a474f6ce305c7aa1d66c1ee892574ce27c74` |
-| Linux | [0 de 65 antivirus lo marcan](https://www.virustotal.com/gui/file/85af95817b007796dd78b404b7f40024389f3fb35b43b70571f6d6424ee6a47d) | `85af95817b007796dd78b404b7f40024389f3fb35b43b70571f6d6424ee6a47d` |
+| Windows | [0 de 64 antivirus lo marcan](https://www.virustotal.com/gui/file/26f4770a66c0e3cfbdc5fbd3f1cef9400cba214b248906dd072d008ff9f0fdad) | `26f4770a66c0e3cfbdc5fbd3f1cef9400cba214b248906dd072d008ff9f0fdad` |
+| Linux | [0 de 65 antivirus lo marcan](https://www.virustotal.com/gui/file/d1706040e756d6d88e1e7a938e88eedbc5ad7c1cb33a8f0bac001ae6cdb055da) | `d1706040e756d6d88e1e7a938e88eedbc5ad7c1cb33a8f0bac001ae6cdb055da` |
 
 Experimental: instrucciones y estado de las pruebas en el [README](https://github.com/VinceWasHere/dxmts-coop4#readme). Aviso legal: [AVISO-LEGAL.md](https://github.com/VinceWasHere/dxmts-coop4/blob/main/AVISO-LEGAL.md).
