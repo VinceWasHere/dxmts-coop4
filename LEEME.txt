@@ -1,0 +1,76 @@
+DAEMON X MACHINA: TITANIC SCION - ESCENARIO PARA 4 JUGADORES
+============================================================
+
+Que hace
+  El juego limita las salas de Escenario (coop) a 3 jugadores. Este mod:
+  - Sube ese limite a 4. Los modos de batalla (PvP) siguen exactamente igual.
+  - Completa para 4 jugadores los calculos del juego que cambian segun el
+    numero de jugadores y solo llegaban hasta 3:
+    * Objetos rompibles (estatua gargola): el juego reduce el dano de cada
+      jugador para que entre todos no la rompan demasiado rapido
+      (1 jugador 1,00; 2 jugadores 0,55; 3 jugadores 0,40). Con 4 usaba el
+      valor de 1 jugador. Ahora usa 0,325, que sigue la misma serie.
+    * Tope de enemigos activos por zona: 5, 5, 6 y 8 segun haya 1, 2, 3 o 4
+      jugadores. Con 4 caia a 5. Ahora es 10.
+    * Colocacion lateral de cada jugador en una escena compartida: con 4 no
+      habia hueco previsto y quedaban en el mismo sitio. Ahora usan el reparto
+      de 3 (el 4.o comparte lado con el 2.o).
+  - El ajuste del ataque enemigo segun el numero de jugadores ya traia valores
+    para 4: no se ha tocado.
+  - Lo que el juego bloquea en multijugador (por ejemplo, cargar partida, que
+    solo se permite con 1 jugador) sigue mostrando el aviso del propio juego.
+
+Contenido
+  coop4.py / coop4.ps1   cambian 4 puntos del ejecutable (con comprobacion de
+                         version) y copian el pak.
+  mod/                   pak pequeno con la tabla de rompibles con la fila de
+                         4 jugadores. Solo contiene esa tabla.
+
+Antes de empezar
+  - TODOS los jugadores de la sala deben instalarlo.
+  - Todos deben tener la misma version del juego.
+  - Cierra el juego antes de instalar o desinstalar.
+  - No incluye archivos del juego ni sirve con el ejecutable protegido de
+    Steam: si no reconoce tu version, avisa y no toca nada.
+
+Instalar
+  1. Descomprime la carpeta DXMTS-Coop4 dentro de la carpeta del juego
+     (la que contiene la carpeta "Game").
+  2. Windows: doble clic en Instalar-Windows.bat
+     Linux o Steam Deck: ejecuta instalar-linux.sh (necesita python3)
+     Si Windows muestra un aviso de archivo descargado, elige
+     "Mas informacion" > "Ejecutar de todas formas".
+     Si el juego esta en "Archivos de programa", ejecutalo como administrador.
+  Si ya tenias la version anterior (solo salas de 4), instala esta encima:
+  completa lo que falta.
+
+Desinstalar
+  Windows: Desinstalar-Windows.bat
+  Linux: desinstalar-linux.sh
+  Devuelve el ejecutable a su estado original y borra el pak del mod.
+  Ademas, la instalacion deja una copia del ejecutable original en
+  la carpeta _backup_coop4 del juego.
+
+Si actualizas el juego
+  La actualizacion puede deshacer el mod. Vuelve a instalarlo; si la version
+  ya no se reconoce, el mod no se aplicara.
+
+Estado: EXPERIMENTAL
+  Comprobado en un PC con Linux:
+  - El limite de la sala cambia solo en Escenario; los modos de batalla no.
+  - El juego carga el pak: la tabla de rompibles queda en memoria con 4 filas.
+  - Instalar y desinstalar en Linux.
+  - Prueba con 4 jugadores simulados en un mismo PC, sin red: en el Hangar y en
+    una mision hubo 4 mechas juntos y no hubo fallos. Con esta version
+    completa se repitio en la base y en el mundo abierto (zona nevada con
+    una mision activa): 4 jugadores juntos, moviendose y sin fallos. Esa
+    prueba necesito ayudas internas que este mod NO incluye.
+
+  Sin comprobar:
+  - Una partida real por internet con 4 personas: unirse a la sala, entrar en
+    mision, sincronizacion entre jugadores y fin de mision.
+  - Romper la estatua gargola o llenar una zona de enemigos con 4 jugadores:
+    los valores nuevos se han deducido del codigo, no se han visto en juego.
+  - El instalador de Windows en un Windows real.
+
+  Si algo falla, desinstala el mod: el juego vuelve a su estado original.

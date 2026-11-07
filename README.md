@@ -1,0 +1,81 @@
+# DAEMON X MACHINA: TITANIC SCION, Escenario para 4 jugadores
+
+Mod que sube de 3 a 4 el límite de jugadores de las salas de **Escenario** (coop) y completa para 4 los cálculos del juego que dependen del número de jugadores. Los modos de batalla (PvP) no cambian.
+
+> **Estado: experimental.** Se ha probado en un PC con Linux con jugadores simulados. Todavía no se ha probado una partida real por internet con 4 personas. Detalles en [Qué está comprobado](#qué-está-comprobado).
+
+## Descarga
+
+Descarga el zip de la última versión en [Releases](../../releases/latest) (`DXMTS-Coop4.zip`). También puedes usar *Code → Download ZIP*: contiene los mismos archivos.
+
+## Requisitos
+
+- **Todos los jugadores de la sala deben instalar el mod** y tener la misma versión del juego.
+- Windows: PowerShell (viene con Windows 10 y 11).
+- Linux o Steam Deck: `python3`.
+- Sirve con el ejecutable sin protección del juego. Con el ejecutable protegido de Steam la versión no se reconoce: el instalador avisa y no toca nada.
+- No incluye ningún archivo del juego.
+
+## Instalar
+
+1. Cierra el juego.
+2. Descomprime la carpeta `DXMTS-Coop4` dentro de la carpeta del juego, la que contiene la carpeta `Game`.
+3. Ejecuta el instalador:
+   - **Windows:** doble clic en `Instalar-Windows.bat`.
+     - Si Windows avisa de que el archivo viene de internet, elige *Más información → Ejecutar de todas formas*.
+     - Si el juego está en *Archivos de programa*, ejecútalo como administrador.
+   - **Linux / Steam Deck:** ejecuta `instalar-linux.sh`.
+
+El instalador comprueba la versión antes de tocar nada. La primera vez guarda una copia del ejecutable original en la carpeta `_backup_coop4` del juego. Si tenías la versión anterior del mod (solo salas de 4), instala esta encima.
+
+## Desinstalar
+
+- **Windows:** `Desinstalar-Windows.bat`
+- **Linux:** `desinstalar-linux.sh`
+
+Devuelve el ejecutable a su estado original, byte a byte, y borra el pak del mod.
+
+**Si actualizas el juego**, la actualización puede deshacer el mod. Vuelve a instalarlo; si la versión nueva ya no se reconoce, el instalador no hará nada.
+
+## Qué cambia
+
+| Cambio | Antes | Con el mod |
+|---|---|---|
+| Jugadores por sala de Escenario | 3 | 4 (los modos de batalla, igual) |
+| Daño de cada jugador a objetos rompibles (estatua gárgola) | 1,00 / 0,55 / 0,40 con 1, 2 o 3 jugadores; con 4 volvía a 1,00 | 0,325 con 4, que sigue la misma serie |
+| Tope de enemigos activos por zona | 5 / 5 / 6 / 8 según 1-4 jugadores, pero con 4 caía a 5 | 10 con 4 |
+| Colocación lateral de cada jugador en escenas compartidas | sin hueco para el 4.º (quedaban en el mismo sitio) | reparto de 3; el 4.º comparte lado con el 2.º |
+
+- El ajuste del ataque enemigo según el número de jugadores ya traía valores para 4 y no se ha tocado.
+- Lo que el juego bloquea en multijugador (por ejemplo, cargar partida solo con 1 jugador) sigue mostrando el aviso del propio juego.
+
+### Detalle técnico
+
+- `coop4.py` (Linux) y `coop4.ps1` (Windows) hacen lo mismo: comprueban los bytes originales en 4 posiciones del ejecutable `Game/Binaries/Win64/Game-Win64-Shipping.exe` y los sustituyen. Si un solo byte no coincide, no aplican nada.
+  - `sala`: límite de jugadores por modo de sala.
+  - `rompibles`: elige la fila de la tabla de daño a rompibles también para 4.
+  - `tope`: tope de enemigos por zona con 4 jugadores.
+  - `coloc`: colocación lateral con 4.
+- `mod/pakchunk99-Windows_P.*`: pak sin cifrar con una sola tabla, `BreakableObjectMultiPlayParam`, a la que se añade la fila de 4 jugadores. Se copia en `Game/Content/Paks`.
+
+## Qué está comprobado
+
+Probado en un PC con Linux (Proton), con 3 jugadores simulados en el mismo PC y sin red:
+
+- La sala de Escenario admite 4; los modos de batalla siguen en su límite.
+- El juego carga el pak: la tabla de rompibles queda en memoria con 4 filas.
+- Instalar, reinstalar encima y desinstalar devuelven el ejecutable al original.
+- Hangar, base, una misión y el mundo abierto con 4 mechs juntos, sin fallos.
+
+**Sin comprobar todavía:**
+
+- Una partida real por internet con 4 personas: unirse a la sala, entrar en misión, sincronización y fin de misión.
+- Romper la estatua gárgola o llenar una zona de enemigos con 4: los valores nuevos se dedujeron del código del juego y no se han visto en partida.
+- El instalador en un Windows real. El script de PowerShell se probó con PowerShell 7 en Linux.
+
+Si algo falla, desinstala el mod y abre un *issue* contando qué pasó, en qué misión y con cuántos jugadores.
+
+## Créditos
+
+- VinceWasHere.
+- Hecho con ayuda de Claude (Anthropic) y de la base de conocimiento de [coop-anything](https://github.com/cranebeaker/coop-anything).
