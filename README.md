@@ -66,6 +66,7 @@ Probado en un PC con Linux (Proton), con 3 jugadores simulados en el mismo PC y 
 - El juego carga el pak: la tabla de rompibles queda en memoria con 4 filas.
 - Instalar, reinstalar encima y desinstalar devuelven el ejecutable al original.
 - Hangar, base, una misión y el mundo abierto con 4 mechs juntos, sin fallos.
+- Combate en el mundo abierto con 4 jugadores en la partida: enemigos atacando, disparos, derribo del jugador y reaparición en el punto de control con los 4, sin cierres del juego.
 
 **Sin comprobar todavía:**
 
@@ -74,6 +75,17 @@ Probado en un PC con Linux (Proton), con 3 jugadores simulados en el mismo PC y 
 - El instalador en un Windows real. El script de PowerShell se probó con PowerShell 7 en Linux.
 
 Si algo falla, desinstala el mod y abre un *issue* contando qué pasó, en qué misión y con cuántos jugadores.
+
+## Evidencias
+
+Capturas de la prueba con 4 jugadores (1 real y 3 simulados en el mismo PC, sin red). Los jugadores simulados no se mueven ni disparan: solo el primero recibe controles.
+
+| | |
+|---|---|
+| ![Hangar](evidencias/01-hangar-4-jugadores.jpg) Hangar con 4 jugadores | ![Base](evidencias/02-base-4-jugadores.jpg) Base con 4 jugadores |
+| ![El fuerte](evidencias/03-mision-el-fuerte-4-jugadores.jpg) Misión «El fuerte» con 4 | ![Mundo abierto](evidencias/04-mundo-abierto-4-jugadores.jpg) Mundo abierto con 4 y misión activa |
+| ![Combate](evidencias/05-combate-enemigos.jpg) Enemigos atacando | ![Disparando](evidencias/06-combate-disparando.jpg) Combate |
+| ![Derribado](evidencias/07-derribado-en-combate.jpg) Derribo del jugador | ![Reaparición](evidencias/08-reaparicion-con-4-jugadores.jpg) Reaparición con los 4 |
 
 ## Créditos
 
