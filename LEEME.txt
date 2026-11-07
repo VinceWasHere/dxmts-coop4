@@ -63,8 +63,10 @@ Estado: EXPERIMENTAL
   - Prueba con 4 jugadores simulados en un mismo PC, sin red: en el Hangar y en
     una mision hubo 4 mechas juntos y no hubo fallos. Con esta version
     completa se repitio en la base y en el mundo abierto (zona nevada con
-    una mision activa): 4 jugadores juntos, moviendose y sin fallos. Esa
-    prueba necesito ayudas internas que este mod NO incluye.
+    una mision activa): 4 jugadores juntos, moviendose y sin fallos. Tambien
+    combate contra enemigos, derribo del jugador y reaparicion en el punto
+    de control con los 4, sin cierres del juego. Esa prueba necesito ayudas
+    internas que este mod NO incluye. Capturas en el repositorio de GitHub.
 
   Sin comprobar:
   - Una partida real por internet con 4 personas: unirse a la sala, entrar en
