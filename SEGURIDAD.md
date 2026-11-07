@@ -25,17 +25,9 @@ El desinstalador hace lo contrario y deja el ejecutable idéntico al original, b
 
 ## 3. Los zips salen de este código, sin cambios
 
-GitHub construye los zips de cada release con [`herramientas/empaquetar.sh`](herramientas/empaquetar.sh), a partir de los archivos visibles de este repositorio. Para cada zip publica una **atestación de origen** firmada: una prueba criptográfica de qué commit y qué proceso lo generaron.
+GitHub construye los zips de cada release con [`herramientas/empaquetar.sh`](herramientas/empaquetar.sh), a partir de los archivos visibles de este repositorio.
 
-Puedes verificarla con [GitHub CLI](https://cli.github.com/):
-
-```
-gh attestation verify DXMTS-Coop4-Windows.zip -R VinceWasHere/dxmts-coop4
-```
-
-Si alguien te pasa un zip modificado, la verificación falla.
-
-Además, los zips son **reproducibles**: el mismo código produce siempre los mismos bytes. En Linux puedes construirlos tú con `sh herramientas/empaquetar.sh` y comparar la huella con `SHA256SUMS.txt` de la release. En la prueba, el zip construido en un PC con Fedora y el de GitHub dieron la misma huella.
+Los zips son **reproducibles**: el mismo código produce siempre los mismos bytes. En Linux puedes construirlos tú con `sh herramientas/empaquetar.sh` y comparar la huella con `SHA256SUMS.txt` de la release. En la prueba, el zip construido en un PC con Fedora y el de GitHub dieron la misma huella.
 
 ## 4. Sumas de comprobación
 

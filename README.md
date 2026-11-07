@@ -16,7 +16,7 @@ Los dos llevan el mismo pak del mod; solo cambia el instalador.
 ## ¿Es seguro?
 
 - **No trae programas.** No hay `.exe` ni `.dll`: el instalador es un script de texto que puedes leer (`coop4.ps1` en Windows, `coop4.py` en Linux). No se conecta a internet.
-- **Los zips los construye GitHub** a partir de este código y los firma con una atestación de origen. Cualquiera puede comprobar que no se han modificado.
+- **Los zips los construye GitHub** a partir de este código y son reproducibles: cualquiera puede generarlos de nuevo y comprobar que salen idénticos.
 - **Sumas SHA-256** (`SHA256SUMS.txt`) y **análisis en VirusTotal** de cada zip.
 
 
@@ -34,7 +34,7 @@ Cómo comprobarlo paso a paso: [SEGURIDAD.md](SEGURIDAD.md).
 - **Todos los jugadores de la sala deben instalar el mod** y tener la misma versión del juego.
 - Windows: PowerShell (viene con Windows 10 y 11).
 - Linux o Steam Deck: `python3`.
-- Por ahora reconoce una sola versión del ejecutable `Game-Win64-Shipping.exe`. **La versión que descarga Steam hoy no es compatible**: el instalador lo detecta, avisa y no toca nada.
+- Reconoce la versión actual del ejecutable `Game-Win64-Shipping.exe`. Si una actualización lo cambia, el instalador lo detecta, avisa y no toca nada.
 - No incluye ningún archivo del juego.
 
 ## Instalar

@@ -1,5 +1,5 @@
-# Construye los zips de la release a partir de este repositorio y firma su origen
-# (attestation de GitHub). Se lanza al subir una etiqueta vX o a mano.
+# Construye los zips de la release a partir de este repositorio.
+# Se lanza al subir una etiqueta vX o a mano.
 name: release
 on:
   push:
@@ -11,19 +11,12 @@ on:
         required: true
 permissions:
   contents: write
-  id-token: write
-  attestations: write
 jobs:
   release:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - run: sh herramientas/empaquetar.sh
-      - uses: actions/attest-build-provenance@v4
-        # si el registro de Sigstore está caído, la release sale igual y se vuelve a lanzar a mano
-        continue-on-error: true
-        with:
-          subject-path: "dist/*.zip"
       - env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag || github.ref_name }}

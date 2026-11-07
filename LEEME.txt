@@ -35,9 +35,8 @@ Antes de empezar
   - TODOS los jugadores de la sala deben instalarlo.
   - Todos deben tener la misma version del juego.
   - Cierra el juego antes de instalar o desinstalar.
-  - No incluye archivos del juego. Por ahora reconoce una sola version del
-    ejecutable; la que descarga Steam hoy no es compatible. Si no reconoce
-    tu version, avisa y no toca nada.
+  - No incluye archivos del juego. Reconoce la version actual del
+    ejecutable. Si una actualizacion lo cambia, avisa y no toca nada.
 
 Instalar
   1. Descomprime la carpeta DXMTS-Coop4 dentro de la carpeta del juego
