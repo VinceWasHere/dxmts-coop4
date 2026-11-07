@@ -35,6 +35,8 @@ gh attestation verify DXMTS-Coop4-Windows.zip -R VinceWasHere/dxmts-coop4
 
 Si alguien te pasa un zip modificado, la verificación falla.
 
+Además, los zips son **reproducibles**: el mismo código produce siempre los mismos bytes. En Linux puedes construirlos tú con `sh herramientas/empaquetar.sh` y comparar la huella con `SHA256SUMS.txt` de la release. En la prueba, el zip construido en un PC con Fedora y el de GitHub dieron la misma huella.
+
 ## 4. Sumas de comprobación
 
 Cada release incluye `SHA256SUMS.txt` con la huella SHA-256 de los dos zips. Calcula la de tu archivo y compárala con la de la release:
