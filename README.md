@@ -6,14 +6,27 @@ Mod que sube de 3 a 4 el límite de jugadores de las salas de **Escenario** (coo
 
 ## Descarga
 
-Descarga el zip de la última versión en [Releases](../../releases/latest) (`DXMTS-Coop4.zip`). También puedes usar *Code → Download ZIP*: contiene los mismos archivos.
+En [Releases](../../releases/latest), elige el zip de tu sistema:
+
+- **Windows:** `DXMTS-Coop4-Windows.zip`
+- **Linux / Steam Deck:** `DXMTS-Coop4-Linux.zip`
+
+Los dos llevan el mismo pak del mod; solo cambia el instalador.
+
+## ¿Es seguro?
+
+- **No trae programas.** No hay `.exe` ni `.dll`: el instalador es un script de texto que puedes leer (`coop4.ps1` en Windows, `coop4.py` en Linux). No se conecta a internet.
+- **Los zips los construye GitHub** a partir de este código y los firma con una atestación de origen. Cualquiera puede comprobar que no se han modificado.
+- **Sumas SHA-256** (`SHA256SUMS.txt`) y **análisis en VirusTotal** de cada zip.
+
+Cómo comprobarlo paso a paso: [SEGURIDAD.md](SEGURIDAD.md).
 
 ## Requisitos
 
 - **Todos los jugadores de la sala deben instalar el mod** y tener la misma versión del juego.
 - Windows: PowerShell (viene con Windows 10 y 11).
 - Linux o Steam Deck: `python3`.
-- Sirve con el ejecutable sin protección del juego. Con el ejecutable protegido de Steam la versión no se reconoce: el instalador avisa y no toca nada.
+- Por ahora reconoce una sola versión del ejecutable `Game-Win64-Shipping.exe`. **La versión que descarga Steam hoy no es compatible**: el instalador lo detecta, avisa y no toca nada.
 - No incluye ningún archivo del juego.
 
 ## Instalar
@@ -93,6 +106,12 @@ Capturas de la prueba con 4 jugadores (1 real y 3 simulados en el mismo PC, sin 
 | ![Combate](evidencias/05-combate-enemigos.jpg) Enemigos atacando | ![Disparando](evidencias/06-combate-disparando.jpg) Combate |
 | ![Derribado](evidencias/07-derribado-en-combate.jpg) Derribo del jugador | ![Reaparición](evidencias/08-reaparicion-con-4-jugadores.jpg) Reaparición con los 4 |
 | ![Soporte 4](evidencias/09-mostrador-4-placa-004.jpg) 4.º soporte del hangar con la placa «004» | ![ARSENAL en el soporte 4](evidencias/10-mostrador-4-arsenal.jpg) Aviso ARSENAL en el 4.º soporte |
+
+## Licencia y aviso legal
+
+- Los scripts y la documentación se publican con licencia [MIT](LICENSE).
+- Los archivos de `mod/` contienen datos modificados del juego, propiedad de sus titulares, y no están cubiertos por esa licencia.
+- Este es un proyecto de aficionados, sin relación con Marvelous Inc. Más detalles en [AVISO-LEGAL.md](AVISO-LEGAL.md).
 
 ## Créditos
 

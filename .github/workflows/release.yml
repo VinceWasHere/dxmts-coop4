@@ -1,0 +1,30 @@
+# Construye los zips de la release a partir de este repositorio y firma su origen
+# (attestation de GitHub). Se lanza al subir una etiqueta vX o a mano.
+name: release
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Etiqueta de la release (por ejemplo v3)"
+        required: true
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh herramientas/empaquetar.sh
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: "dist/*.zip"
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "$TAG" --notes-file .github/notas-release.md
+          gh release upload "$TAG" dist/DXMTS-Coop4-Windows.zip dist/DXMTS-Coop4-Linux.zip dist/SHA256SUMS.txt --clobber
