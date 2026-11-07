@@ -19,6 +19,14 @@ Los dos llevan el mismo pak del mod; solo cambia el instalador.
 - **Los zips los construye GitHub** a partir de este código y los firma con una atestación de origen. Cualquiera puede comprobar que no se han modificado.
 - **Sumas SHA-256** (`SHA256SUMS.txt`) y **análisis en VirusTotal** de cada zip.
 
+
+Análisis en VirusTotal de la versión v3 (2026-11-07):
+
+| Zip | Resultado | SHA-256 |
+|---|---|---|
+| Windows | [0 de 66 antivirus lo marcan](https://www.virustotal.com/gui/file/3386873c4a76fa366bbbc0f6c2e5a474f6ce305c7aa1d66c1ee892574ce27c74) | `3386873c4a76fa366bbbc0f6c2e5a474f6ce305c7aa1d66c1ee892574ce27c74` |
+| Linux | [0 de 65 antivirus lo marcan](https://www.virustotal.com/gui/file/85af95817b007796dd78b404b7f40024389f3fb35b43b70571f6d6424ee6a47d) | `85af95817b007796dd78b404b7f40024389f3fb35b43b70571f6d6424ee6a47d` |
+
 Cómo comprobarlo paso a paso: [SEGURIDAD.md](SEGURIDAD.md).
 
 ## Requisitos
