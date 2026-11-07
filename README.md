@@ -45,6 +45,7 @@ Devuelve el ejecutable a su estado original, byte a byte, y borra el pak del mod
 | Daño de cada jugador a objetos rompibles (estatua gárgola) | 1,00 / 0,55 / 0,40 con 1, 2 o 3 jugadores; con 4 volvía a 1,00 | 0,325 con 4, que sigue la misma serie |
 | Tope de enemigos activos por zona | 5 / 5 / 6 / 8 según 1-4 jugadores, pero con 4 caía a 5 | 10 con 4 |
 | Colocación lateral de cada jugador en escenas compartidas | sin hueco para el 4.º (quedaban en el mismo sitio) | reparto de 3; el 4.º comparte lado con el 2.º |
+| Soportes de mecha en el hangar | 3; el mecha del 4.º salía encima de la vitrina | 4: soporte nuevo en el hueco frente al 3.º, con placa «004» y acceso a ARSENAL |
 
 - El ajuste del ataque enemigo según el número de jugadores ya traía valores para 4 y no se ha tocado.
 - Lo que el juego bloquea en multijugador (por ejemplo, cargar partida solo con 1 jugador) sigue mostrando el aviso del propio juego.
@@ -56,7 +57,10 @@ Devuelve el ejecutable a su estado original, byte a byte, y borra el pak del mod
   - `rompibles`: elige la fila de la tabla de daño a rompibles también para 4.
   - `tope`: tope de enemigos por zona con 4 jugadores.
   - `coloc`: colocación lateral con 4.
-- `mod/pakchunk99-Windows_P.*`: pak sin cifrar con una sola tabla, `BreakableObjectMultiPlayParam`, a la que se añade la fila de 4 jugadores. Se copia en `Game/Content/Paks`.
+- `mod/pakchunk99-Windows_P.*`: pak sin cifrar que se copia en `Game/Content/Paks`. Contiene:
+  - `BreakableObjectMultiPlayParam`: la tabla de rompibles con la fila de 4 jugadores.
+  - `BG_Base000_H000`: el mapa del hangar con una copia del 3.er soporte (`BP_ArsenalBase000_107_C_6`), colocada en espejo en el hueco vacío y añadida como 4.ª posición de la vitrina de mechas (`SpawnPointList`).
+  - `T_DecalNumbers008_107` y `MI_DecalNumbers008_107`: textura y material de la placa «004», hechos a partir de la placa «003».
 
 ## Qué está comprobado
 
@@ -66,12 +70,14 @@ Probado en un PC con Linux (Proton), con 3 jugadores simulados en el mismo PC y 
 - El juego carga el pak: la tabla de rompibles queda en memoria con 4 filas.
 - Instalar, reinstalar encima y desinstalar devuelven el ejecutable al original.
 - Hangar, base, una misión y el mundo abierto con 4 mechs juntos, sin fallos.
+- Hangar con 4: el mecha del 4.º jugador aparece sobre el 4.º soporte, con la placa «004». Al acercarse sale el aviso ARSENAL igual que en los otros tres (el aviso lleva el nombre del jugador local en todos los soportes).
 - Combate en el mundo abierto con 4 jugadores en la partida: enemigos atacando, disparos, derribo del jugador y reaparición en el punto de control con los 4, sin cierres del juego.
 
 **Sin comprobar todavía:**
 
 - Una partida real por internet con 4 personas: unirse a la sala, entrar en misión, sincronización y fin de misión.
 - Romper la estatua gárgola o llenar una zona de enemigos con 4: los valores nuevos se dedujeron del código del juego y no se han visto en partida.
+- Abrir ARSENAL desde el 4.º soporte con un 4.º jugador real: los simulados no reciben controles. El soporte es una copia exacta de los otros, que cualquier jugador usa.
 - El instalador en un Windows real. El script de PowerShell se probó con PowerShell 7 en Linux.
 
 Si algo falla, desinstala el mod y abre un *issue* contando qué pasó, en qué misión y con cuántos jugadores.
@@ -86,6 +92,7 @@ Capturas de la prueba con 4 jugadores (1 real y 3 simulados en el mismo PC, sin 
 | ![El fuerte](evidencias/03-mision-el-fuerte-4-jugadores.jpg) Misión «El fuerte» con 4 | ![Mundo abierto](evidencias/04-mundo-abierto-4-jugadores.jpg) Mundo abierto con 4 y misión activa |
 | ![Combate](evidencias/05-combate-enemigos.jpg) Enemigos atacando | ![Disparando](evidencias/06-combate-disparando.jpg) Combate |
 | ![Derribado](evidencias/07-derribado-en-combate.jpg) Derribo del jugador | ![Reaparición](evidencias/08-reaparicion-con-4-jugadores.jpg) Reaparición con los 4 |
+| ![Soporte 4](evidencias/09-mostrador-4-placa-004.jpg) 4.º soporte del hangar con la placa «004» | ![ARSENAL en el soporte 4](evidencias/10-mostrador-4-arsenal.jpg) Aviso ARSENAL en el 4.º soporte |
 
 ## Créditos
 

@@ -11,7 +11,8 @@ Cambios en el ejecutable (los modos de batalla/PvP no cambian):
              jugadores): con 4 caia a 5; ahora 10.
   coloc      colocacion lateral por jugador: con 4 no habia hueco y quedaban
              en el mismo sitio; ahora usa el reparto de 3.
-Y copia el pak del mod (tabla con la fila de 4 jugadores) a Game/Content/Paks.
+Y copia el pak del mod (tabla con la fila de 4 jugadores y 4.o soporte del
+hangar) a Game/Content/Paks.
 
 Todos los jugadores de la sala deben aplicarlo. Si la version del juego no
 coincide, el script no toca nada.

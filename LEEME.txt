@@ -15,6 +15,10 @@ Que hace
     * Colocacion lateral de cada jugador en una escena compartida: con 4 no
       habia hueco previsto y quedaban en el mismo sitio. Ahora usan el reparto
       de 3 (el 4.o comparte lado con el 2.o).
+  - Hangar: anade un 4.o soporte de mecha, copia de los otros tres, en el
+    hueco vacio frente al 3.o, con la placa "004". Ahi aparece el mecha del
+    4.o jugador (antes salia encima de la vitrina) y se usa igual que los
+    demas para entrar en ARSENAL.
   - El ajuste del ataque enemigo segun el numero de jugadores ya traia valores
     para 4: no se ha tocado.
   - Lo que el juego bloquea en multijugador (por ejemplo, cargar partida, que
@@ -23,8 +27,9 @@ Que hace
 Contenido
   coop4.py / coop4.ps1   cambian 4 puntos del ejecutable (con comprobacion de
                          version) y copian el pak.
-  mod/                   pak pequeno con la tabla de rompibles con la fila de
-                         4 jugadores. Solo contiene esa tabla.
+  mod/                   pak pequeno con la tabla de rompibles (fila de 4
+                         jugadores), el mapa del hangar con el 4.o soporte y
+                         la placa "004" (textura y material).
 
 Antes de empezar
   - TODOS los jugadores de la sala deben instalarlo.
@@ -59,6 +64,8 @@ Estado: EXPERIMENTAL
   Comprobado en un PC con Linux:
   - El limite de la sala cambia solo en Escenario; los modos de batalla no.
   - El juego carga el pak: la tabla de rompibles queda en memoria con 4 filas.
+  - Hangar con 4: el mecha del 4.o jugador aparece en el 4.o soporte, con la
+    placa "004", y el soporte muestra el aviso ARSENAL como los otros tres.
   - Instalar y desinstalar en Linux.
   - Prueba con 4 jugadores simulados en un mismo PC, sin red: en el Hangar y en
     una mision hubo 4 mechas juntos y no hubo fallos. Con esta version
