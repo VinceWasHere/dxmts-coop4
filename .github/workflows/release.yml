@@ -20,6 +20,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: sh herramientas/empaquetar.sh
       - uses: actions/attest-build-provenance@v4
+        # si el registro de Sigstore está caído, la release sale igual y se vuelve a lanzar a mano
+        continue-on-error: true
         with:
           subject-path: "dist/*.zip"
       - env:
